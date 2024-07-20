@@ -101,16 +101,15 @@
 // 12
 // 1
 
-// let n = 9;
-// for(let i=n; i>=1; i--){
-//     let str = '';
-//     for(let j=1; j<=i; j++){
-//         str += j;
-//     }
-//     console.log(str);
-// }
+let n = 9;
+for(let i=n; i>=1; i--){
+    let str = '';
+    for(let j=1; j<=i; j++){
+        str += j;
+    }
+    console.log(str);
+}
 
 
-// m
 
 // https://takeuforward.org/strivers-a2z-dsa-course/must-do-pattern-problems-before-starting-dsa/
