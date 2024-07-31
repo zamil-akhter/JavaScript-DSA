@@ -122,23 +122,6 @@
 
 
 
-let n = 5;
-
-for(let i=0; i<n; i++){
-    // console.log(i);
-    let str = '';
-    for(let j=i; j<n-1; j++){
-        str += 'j';
-    }
-    // console.log(str);
-    let strr = '';
-    for(let k=0; k<i;k++){
-        strr += 'k';
-    }
-    console.log(strr);
-}
-
-
 
 
 
