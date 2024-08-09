@@ -134,6 +134,62 @@
 //? *********
 
 
+// let n = 5;
+// for(let i=0; i<n; i++){
+//     //space 
+//     let str = '';
+//     for(let j=0; j<n-i-1; j++){
+//         str += ' ';
+//     }
+//     //star
+//     for(let j=0; j<2*i+1; j++){
+//         str +='*'
+//     }
+//     // space
+//     for(let j=0; j<n-i-1; j++){
+//         str += ' ';
+//     }
+//     console.log(str)
+// }
+
+
+
+
+//! -----------------------------------------------------------------------------------------
+
+//? *********
+//?  *******
+//?   *****
+//?    ***
+//?     *
+
+
+
+// let n = 5;
+// for(let i=0; i<n; i++){
+//     //space 
+//     let str = '';
+   
+//     for(let j=0; j<i;j++){
+//         str +=' ';
+//     }
+//     //star
+   
+//     for(let k=0; k<(2*n-(2*i+1)); k++){
+//         str += '*'
+//     }
+   
+//     // space
+//     for(let j=0; j<i;j++){
+//         str +=' ';
+//     }
+//     console.log(str)
+// }
+
+
+
+
+
 
 
 //! -----------------------------------------------------------------------------------------
@@ -243,17 +299,16 @@
 //?     A
 
 
-let n = 5;
-
-for(let i=n; i>=1; i--){
-    let charValue = 65;
-    let str = ''
-    for(let j=0; j<i; j++){
-        str += String.fromCharCode(charValue);
-        charValue++;
-     }
-    console.log(str);
-}
+// let n = 5;
+// for(let i=n; i>=1; i--){
+//     let charValue = 65;
+//     let str = ''
+//     for(let j=0; j<i; j++){
+//         str += String.fromCharCode(charValue);
+//         charValue++;
+//      }
+//     console.log(str);
+// }
 
 
 
