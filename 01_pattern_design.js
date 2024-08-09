@@ -166,17 +166,48 @@
 //?     1 0 1 0 1
 
 
-let n = 5;
-let startValue = 1;
-for(let i = 1; i<=n; i++){
-    let value = startValue;
-    let tempValue = '';
+// let n = 5;
+// let startValue = 1;
+// for(let i = 1; i<=n; i++){
+//     let value = startValue;
+//     let tempValue = '';
+//     for(let j=1; j<=i; j++){
+//         tempValue += ` ${value}`;
+//         value =  value === 1 ? 0: 1;
+//     }
+//     console.log(tempValue);
+//     startValue =  startValue === 1 ? 0: 1;
+// }
+
+
+
+
+//! -----------------------------------------------------------------------------------------
+//?     *
+//?     **
+//?     ***
+//?     ****
+//?     *****
+//?     ****
+//?     ***
+//?     **
+//?     *
+
+
+let n = 10;
+for (let i=1; i<=n; i++){
+    let str = '';
     for(let j=1; j<=i; j++){
-        tempValue += ` ${value}`;
-        value =  value === 1 ? 0: 1;
+        str += '*'
     }
-    console.log(tempValue);
-    startValue =  startValue === 1 ? 0: 1;
+    console.log(str);
+}
+for(let i=n-1; i>=1; i--){
+    let str = '';
+    for(let j=1; j<=i; j++){
+        str += '*';
+    }
+    console.log(str);    
 }
 
 
