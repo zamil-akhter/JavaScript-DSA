@@ -221,28 +221,42 @@
 //?     ABCDE
 
 
-
-let n = 5;
-for(let i=0; i<n; i++){
-    let charCode = 65;
-    let str = '';
-    for(let k=0; k<=i; k++){
-        str += String.fromCharCode(charCode);
-        charCode ++;
-    }
-    console.log(str);    
-}
-
-
-
-
-
-
-
+// let n = 5;
+// for(let i=0; i<n; i++){
+//     let charCode = 65;
+//     let str = '';
+//     for(let k=0; k<=i; k++){
+//         str += String.fromCharCode(charCode);
+//         charCode ++;
+//     }
+//     console.log(str);    
+// }
 
 
 
 //! -----------------------------------------------------------------------------------------
+
+//?     ABCDE
+//?     ABCD
+//?     ABC
+//?     AB
+//?     A
+
+
+let n = 5;
+
+for(let i=n; i>=1; i--){
+    let charValue = 65;
+    let str = ''
+    for(let j=0; j<i; j++){
+        str += String.fromCharCode(charValue);
+        charValue++;
+     }
+    console.log(str);
+}
+
+
+
 //! -----------------------------------------------------------------------------------------
 //! -----------------------------------------------------------------------------------------
 //! -----------------------------------------------------------------------------------------
