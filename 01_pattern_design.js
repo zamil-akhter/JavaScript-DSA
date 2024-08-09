@@ -163,19 +163,20 @@
 //?     0 1
 //?     1 0 1
 //?     0 1 0 1
-//?     0 1 0 1 0
-//?     1 0 1 0 1 0
+//?     1 0 1 0 1
+
 
 let n = 5;
-let value = 1;
-
+let startValue = 1;
 for(let i = 1; i<=n; i++){
+    let value = startValue;
     let tempValue = '';
     for(let j=1; j<=i; j++){
         tempValue += ` ${value}`;
         value =  value === 1 ? 0: 1;
     }
     console.log(tempValue);
+    startValue =  startValue === 1 ? 0: 1;
 }
 
 
