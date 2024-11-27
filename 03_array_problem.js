@@ -37,7 +37,7 @@
 //         secondSmallestNumber = arr[i]
 //     }
 // }
-// console.log('secondLargestNumber ---->', secondLargestNumber);
+// console.log('secondLargestNumber  ---->', secondLargestNumber);
 // console.log('secondSmallestNumber ---->', secondSmallestNumber);
 
 // ! 3. Check if an Array is Sorted
@@ -70,7 +70,7 @@
 // }
 // console.log(arr);
 
-// ! Left Rotate the Array by One
+// ! 5. Left Rotate the Array by One
 
 // ! Input:
 // ! N = 5, array = [1,2,3,4,5]
@@ -90,35 +90,75 @@
 // }
 // console.log(arr);
 
+// ! 6. Rotate array by K elements
+// ! Input: N = 7, array[1,2,3,4,5,6,7] ,  k=2
+// ! Output: [6, 7, 1, 2, 3, 4, 5]
 
 
 
-
-
-
-
-
-
-// ! four distinct value, no integer repeat twice consecutively among first twenty entries
-// let a = [1,2,3,4, 1,2,3,4, 1,2,3,4, 1,2,3,4]    // true
-// let a = [1,2,3,3, 1,2,3,3, 1,2,3,3, 1,2,3,3]    // true
-// let a = [1,2,3, 1,2,3, 1,2,3, 1,2,3, 1,2,3]    // true
-
-// let streakOfFour = 0
-// for(let i=0; i<a.length; i++){
-//     console.log(a[i],'-------',a[i-1]+1);
-
-// if(a[i] === a[i+1]-1){
-//     streakOfFour ++
-// }else{
-//     streakOfFour = 0
-// }
-// if(streakOfFour === 4){
-//     console.log('streak--------->>>>',streakOfFour);
-
+// const rotateArray = (a,k) => {
+//   for(let i=0; i<a.length; i++){
+//     if(k > 0){
+//       a.unshift(a.pop());
+//       k--;
+//     }else{
+//       break;
+//     }
+//   }
+//   return a
 // }
 
+// const rotateArray = (a,k) => {
+//   return a.slice(-k).concat(a.slice(0, -k))
 // }
+
+// let a = [1,2,3,4,5,6,7];
+// k = 3
+// console.log(rotateArray(a,k));
+
+
+// ! 7. Move all Zeros to the end of the array
+// ! Input:
+// ! 1 ,0 ,2 ,3 ,0 ,4 ,0 ,1
+// ! Output:
+// ! 1 ,2 ,3 ,4 ,1 ,0 ,0 ,0
+
+// let a = [1 ,0 ,2 ,3 ,0 ,4 ,0 ,1]
+// for(let i=a.length-1; i>=0; i--){
+//   if(a[i] === 0 ){
+//     a.splice(i,1)
+//     a.push(0)
+//   }
+// } 
+// console.log(a);
+
+
+
+
+
+
+
+
+
+// !test
+
+// function flattenArray(arr) {
+//     const result = [];
+  
+//     for (let i = 0; i < arr.length; i++) {
+//       if (Array.isArray(arr[i])) {
+//         result.push(...flattenArray(arr[i]))
+//       } else {
+//         result.push(arr[i]);
+//       }
+//     }
+//     return result;
+//   }
+  
+//   const array = [1, [2, [3, 4], 5]];
+//   console.log(flattenArray(array));
+
+
 
 // ! merge two shorted array without extra space
 
@@ -166,84 +206,215 @@
 //     // console.log(i);
 //     for(let j=0; j<a[i].length; j++){
 //         console.log(a[i][j]);
-
 //     }
 // }
 
 
+// const a = ['a', 'b', 'c', 'a', 'b', 'd', 'a', 'b', 'c', 'd', 'd', 'e'];
 
-// ! Random
 
-let arr = [
-    {
-      id: 13455,
-      name: "Manish",
-      rId: 85,
-      date_range_to: "2024-11-05",
-      date_range_from: "2024-11-01",
-    },
-    {
-      id: 13455,
-      name: "Manish",
-      rId: 86,
-      date_range_to: "2024-11-10",
-      date_range_from: "2024-11-06",
-    },
-    {
-      id: 13459,
-      name: "Rahul",
-      rId: 87,
-      date_range_to: "2024-11-01",
-      date_range_from: "2024-11-01",
-    },
-    {
-      id: 13454,
-      name: "Raj",
-      rId: 88,
-      date_range_to: "2024-11-01",
-      date_range_from: "2024-11-01",
-    },
-  ];
-  
-//   OUTPUT[
-//     ({
-//       id: 13455,
-//       name: "Manish",
-//       rIds: [85, 86],
-//       date_range_from: "2024-11-01",
-//       date_range_to: "2024-11-10",
-//     },
-//     {
-//       id: 13459,
-//       name: "Rahul",
-//       rIds: [87],
-//       date_range_from: "2024-11-01",
-//       date_range_to: "2024-11-10",
-//     },
-//     {
-//       id: 13454,
-//       name: "Raj",
-//       rIds: [88],
-//       date_range_from: "2024-11-01",
-//       date_range_to: "2024-11-10",
-//     })
-//   ];
-  
-// const a = new Date("2024-11-01");
-// const b = new Date("2024-11-02");
-// console.log(a);
-// console.log(b);
-// console.log(b-a);
 
-// let demoObj = [];
-// demoObj.push(arr[0]);
-// for(let i=0; i<arr.length;i++){
-//     // console.log(arr[i]);
-//     for(let value in arr[i]){
-//         console.log(value,'-------------',arr[i][value]);
-      
-//     }
+// ! Longest sub Array in array
+
+// const findLongestSubArray = (arr) => {
+//     let longestSubArray = [];
     
-// }
-// console.log("demoObj",demoObj);
+//     for (let i = 0; i < arr.length; i++) {
+//         let temp = [];
+//         let tempSubArray = [];
+        
+//         for (let j = i; j < arr.length; j++) {
+//             if (!temp.includes(arr[j])) {
+//                 temp.push(arr[j]);
+//                 tempSubArray.push(arr[j]);
+//             } else {
+//                 break;
+//             }
+//         }
 
+//         if (tempSubArray.length > longestSubArray.length) {
+//             longestSubArray = tempSubArray;
+//         }
+//     }
+//     return longestSubArray;
+// };
+
+// const a = ['a', 'b', 'c', 'a', 'b', 'd', 'a', 'b', 'c', 'd', 'd', 'e'];
+// console.log(findLongestSubArray(a));
+
+
+
+
+// ! Reverse Array 
+// ! Input  ----->> [ 1, 2, 3, 4, 5, 6 ]
+// ! Output ----->> [ 6, 5, 4, 3, 2, 1 ]
+
+// function reverseArray(abc){
+//   start = 0;
+//   end = abc.length - 1;
+
+//   while (start <= end) {
+//     let temp = abc[start];
+//     abc[start] = abc[end];
+//     abc[end] = temp;
+//     start++;
+//     end--;
+//   }
+//   return abc;
+// }
+
+// abc = [1, 2, 3, 4, 5];
+
+// console.log(reverseArray(abc));
+
+
+
+
+
+// ! longest unique sub array from an array 
+
+// const findSub = (a) => {
+//   let longestSubArray = [];
+//   for (let i = 0; i < a.length; i++) {
+//     let tempSubArray = [];
+//     for (let j = i; j < a.length; j++) {
+//       if (!tempSubArray.includes(a[j])) {
+//         tempSubArray.push(a[j]);
+//       } else {
+//         break;
+//       }
+//     }
+//     if (tempSubArray.length > longestSubArray.length) {
+//       longestSubArray = tempSubArray;
+//     }
+//   }
+//   return longestSubArray;
+// };
+
+
+// // ! multiple test cases
+// let a = ["a", "b", "c", "a", "b", "d", "a", "b", "c", "d", "d", "e"];
+// let a1 = ["a", "b", "c", "a", "b", "d", "a", "b", "c", "d", "d", "e"];
+// let a2 = ["a", "a", "a", "a"];
+// let a3 = ["a", "b", "c", "d", "e"];
+// let a4 = ["a", "b", "c", "a", "b", "b", "b", "a", "d", "e"];
+// let a5 = ["x", "y", "z", "x", "y", "z"];
+// let a6 = ["p", "q", "r", "s", "t", "u", "v"];
+// let a7 = ["a","b","c","d","a","b","c","d","e","f","g","h","i","j","k",];
+// let a8 = ["1", "2", "3", "2", "1", "4", "5", "1", "2", "3", "4", "5", "6"];
+// let a9 = [];
+// let a10 = ["a"];
+
+
+// console.log(findSub(a));  // [ 'c', 'a', 'b', 'd' ]
+// console.log(findSub(a1)); // [ 'c', 'a', 'b', 'd' ]
+// console.log(findSub(a2)); // ["a"]
+// console.log(findSub(a3)); // ["a", "b", "c", "d", "e"]
+// console.log(findSub(a4)); // [ 'b', 'a', 'd', 'e' ]
+// console.log(findSub(a5)); // ["x", "y", "z"]
+// console.log(findSub(a6)); // ["p", "q", "r", "s", "t", "u", "v"]
+// console.log(findSub(a7)); // ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"]
+// console.log(findSub(a8)); // ["1", "2", "3", "4", "5", "6"]
+// console.log(findSub(a9)); // []
+// console.log(findSub(a10)); // ["a"]
+
+
+
+// ! Two consecutive Occurance of 19
+
+// const checkOccuranceOfNineteen = () => {
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] === arr[i - 1] && arr[i] === 19) {
+//       return true;
+//     }
+//   }
+//   return false;
+// };
+// const arr = [12, 23, 19, 19, 5, 6, 19];
+// console.log(checkOccuranceOfNineteen(arr));
+
+
+
+// ! four consecutive number
+
+// function checkArray(arr1) {
+//   let pattern = [arr1[0], arr1[1], arr1[2], arr1[3]];
+
+//   if (arr1.length % 4 !== 0) {
+//     return false;
+//   }
+
+//   for (let i = 1; i < pattern.length; i++) {
+//     if (pattern[i] - pattern[i - 1] !== 1) {
+//       return false;
+//     }
+//   }
+
+//   for (let i = 0; i < arr1.length; i += 4) {
+//     for (let j = 0; j < 4; j++) {
+//       if (arr1[i + j] !== pattern[j]) {
+//         return false;
+//       }
+//     }
+//   }
+
+//   return true;
+// }
+
+// console.log(checkArray([4,5,6,7,4,5,6,7])); // True
+// console.log(checkArray([1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4])); // Output: True
+// console.log(checkArray([1,2, 3, 4, 1,2,3,4])); // Output: True
+// console.log(checkArray([1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3])); // Output: False
+// console.log(checkArray([1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])); // Output: False
+
+
+
+// ! Validate Parenthesis
+
+// const isValid = (s) => {
+//   const stack = [];
+
+//   const bracketMap = {
+//     ")": "(",
+//     "}": "{",
+//     "]": "[",
+//   };
+//   for (let i of s) {
+//     if (i === "(" || i === "{" || i === "[") {
+//       stack.push(i);
+//     } else if (stack.length === 0 || stack.pop() !== bracketMap[i]) {
+//       return false;
+//     }
+//   }
+//   return stack.length === 0;
+// };
+
+// const passingArray = ["[", "{", "}", "]"];
+// console.log(isValid(passingArray));
+
+
+
+// ! check unique Positive Dominant
+
+// const isPositiveDominant = (a) => {
+//   let uniqueArray = [];
+//   for (let i = 0; i < a.length; i++) {
+//     if (!uniqueArray.includes(a[i])) {
+//       uniqueArray.push(a[i]);
+//     }
+//   }
+
+//   let positiveCount = 0;
+//   let negativeCount = 0;
+//   for (let i = 0; i < uniqueArray.length; i++) {
+//     uniqueArray[i] >= 0 ? positiveCount++ : negativeCount++;
+//   }
+
+//   return negativeCount < positiveCount;
+// };
+
+// console.log(isPositiveDominant([1, 1, 1, 1, -3, -4]));  //  false
+// console.log(isPositiveDominant([5, 99, 832, -3, -4]));  //  true
+// console.log(isPositiveDominant([5, 0]));  //  true
+// console.log(isPositiveDominant([0, -4, -1]));  //  false
+// console.log(isPositiveDominant([0, -1])); //  false

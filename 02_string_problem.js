@@ -27,15 +27,65 @@
 // ! s = 'abcdabcdefbb'
 // ! output = 6
 
-let s = 'abcdabcdefbb';
-let streak = 1;
-let maxStreak = 0;
-for(let i=1; i<s.length; i++){
-  if(s[i].charCodeAt()-s[i-1].charCodeAt() === 1){
-    streak++;
-  }else if(streak> maxStreak){
-    maxStreak = streak;
-    streak = 1
-  }
-}
-console.log(maxStreak)
+// let s = 'abcdabcdefbb';
+// let streak = 1;
+// let maxStreak = 0;
+// for(let i=1; i<s.length; i++){
+//   if(s[i].charCodeAt()-s[i-1].charCodeAt() === 1){
+//     streak++;
+//   }else if(streak> maxStreak){
+//     maxStreak = streak;
+//     streak = 1
+//   }
+// }
+// console.log(maxStreak)
+
+
+// ! Reverse only odd length string in a string
+
+// function reverseOddLengthWords(str) {
+//   let words = str.split(' ');
+//   for(let i=0; i<words.length; i++){
+//       if(words[i].length % 2 !== 0){
+//           let tempWord = '';
+//           for(let j=words[i].length-1; j>=0; j--){
+//               tempWord+=words[i][j];
+//           }
+//           words[i] = tempWord;
+//       }
+//   }
+//   return words.join(' ');
+// }
+// let inputString = "Write a function to reverse only odd length string";
+// console.log(reverseOddLengthWords(inputString));
+
+
+
+
+// ! Valid parenthesis in a string
+// const isBalanced = (s) => {
+//   const stack = [];
+//   const bracketMap = {
+//     ")": "(",
+//     "}": "{",
+//     "]": "[",
+//   };
+//   const validateBrackets = ["(", "{", "]", ")", "}", "["];
+
+//   for (let i of s) {
+//     if (!validateBrackets.includes(i)) {
+//       // here i an sending false for non-bracket characters
+//       return false;  
+//     }
+//     if (i === "(" || i === "{" || i === "[") {
+//       stack.push(i);
+//     } else if (stack.length === 0 || stack.pop() !== bracketMap[i]) {
+//       return false;
+//     }
+//   }
+//   return stack.length === 0;
+// };
+// const passingArray = "({}){}";
+// console.log(isBalanced(passingArray));
+
+
