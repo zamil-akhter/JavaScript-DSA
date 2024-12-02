@@ -24,6 +24,10 @@
 
 
 
+
+
+
+
 // ! s = 'abcdabcdefbb'
 // ! output = 6
 
@@ -39,6 +43,10 @@
 //   }
 // }
 // console.log(maxStreak)
+
+
+
+
 
 
 // ! Reverse only odd length string in a string
@@ -58,6 +66,8 @@
 // }
 // let inputString = "Write a function to reverse only odd length string";
 // console.log(reverseOddLengthWords(inputString));
+
+
 
 
 
@@ -89,3 +99,29 @@
 // console.log(isBalanced(passingArray));
 
 
+
+
+// ! Demo
+
+// const isBalaned = (str) => {
+//     let stack = [];
+//     let bracketMap = {
+//         ")" : "(",
+//         "}" : "{",
+//         "]" : "["
+//     }
+//     let brackets = ['(','{','[',')','}',']'];
+//     for(let i=0; i<str.length; i++){
+//         if(!brackets.includes(str[i])){
+//             return false;
+//         }else if(str[i] === '(' || str[i] === '{' || str[i] === '['){
+//             stack.push(str[i]);
+//         }else if(stack.length === 0 || stack.pop() !== bracketMap[str[i]] ){
+//             return false
+//         }
+//     }
+    
+//     return stack.length === 0;
+// }
+// let s = '({}) ';
+// console.log(isBalaned(s));

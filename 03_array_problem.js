@@ -17,11 +17,11 @@
 
 // ! 2. Find Second Smallest and Second Largest Element in an array without sorting
 
-// const arr = [2,5,1,3,0];
-// let largestNumber = arr[0];
-// let secondLargestNumber = arr[0];
-// let smallestNumber = arr[0];
-// let secondSmallestNumber = arr[0];
+// const arr = [9,8,5,1,3];
+// let largestNumber = -Infinity;
+// let secondLargestNumber = -Infinity;
+// let smallestNumber = Infinity;
+// let secondSmallestNumber = Infinity;
 // for(let i=0; i<arr.length; i++){
 //     if(arr[i]>largestNumber){
 //         secondLargestNumber = largestNumber
@@ -42,23 +42,24 @@
 
 // ! 3. Check if an Array is Sorted
 
-// let arr = [1,2,3,4,5,6];
-// let sorted = true;
-// for(let i=1; i<arr.length; i++){
-//     if(arr[i] < arr[i-1]){
-//         sorted = false;
-//         break;
+// var checkSorted = function (nums) {
+//    let sorted = true;
+//    for (let i = 0; i < nums.length-1; i++) {
+//        if (nums[i] > nums[i + 1]) {
+//            sorted = false;
+//            break;
+//        }
 //     }
-// }
-// console.log(sorted ? 'Sorted' : 'Not sorted');
+//     return sorted
+// };
+// let arr = [1,2,3,14,5,6];
+// console.log(checkSorted(arr))
 
 // ! 4. Remove Duplicates in-place from Sorted Array
-
-// Input:
-//  arr[1,1,2,2,2,3,3]
-
-// Output:
-//  arr[1,2,3,_,_,_,_]
+// ! Input:
+// ! arr[1,1,2,2,2,3,3]
+// ! Output:
+// ! arr[1,2,3]
 
 // let arr = [1,1,2,2,2,2,2,2,2,3,3];
 // let index = 1;
@@ -70,58 +71,71 @@
 // }
 // console.log(arr);
 
-// ! 5. Left Rotate the Array by One
+// ! 4. Remove Duplicates in-place from Sorted Array
+// ! ----------- Example 1 ------------
+// ! Input:  [1,1,2,2,2,3,3]
+// ! Output: [1,2,3,_,_,_,_]
 
-// ! Input:
-// ! N = 5, array = [1,2,3,4,5]
-// ! Output:
-// ! [2,3,4,5,1]
+// ! ----------- Example 2 ------------
+// ! Input:  [1,1,1,2,2,3,3,3,3,4,4]
+// ! Output: [1,2,3,4,_,_,_,_,_,_,_]
 
-// let arr = [1, 2, 3, 4, 5];
-// for (let i = 0; i < arr.length; i++) {
-//   if (i === 0) {
-//     lastNumber = arr[0];
-//   } else if (i > 0 && i < arr.length) {
-//     arr[i - 1] = arr[i];
-//     if (i === arr.length - 1) {
-//       arr[i] = lastNumber;
+// const removeDuplicate = (a) => {
+//     let i = 0;
+//     for(let j=1; j<a.length; j++){
+//         if(a[j] !== a[i]){
+//             a[i+1] = a[j];
+//             i++;
+//         }
 //     }
-//   }
+//     return a;
 // }
-// console.log(arr);
+// let a = [1,1,1,2,2,3,3,3,3,4,4];
+// console.log(removeDuplicate(a));
+
+// ! 5. Left Rotate the Array by One
+// ! Input:  [1,2,3,4,5]
+// ! Output: [2,3,4,5,1]
+
+// function leftRotateByOne(arr) {
+//   let temp = arr[0];
+//   for (let i = 1; i < arr.length; i++) {
+//     arr[i-1] = arr[i];
+//   }
+//   arr[arr.length-1] = temp;
+//   return arr;
+// }
+// let arr = [1, 2, 3, 4, 5];
+// console.log(leftRotateByOne(arr));
 
 // ! 6. Rotate array by K elements
-// ! Input: N = 7, array[1,2,3,4,5,6,7] ,  k=2
+// ! Input:  [1, 2, 3, 4, 5, 6, 7] ,  k=2
 // ! Output: [6, 7, 1, 2, 3, 4, 5]
 
-
-
 // const rotateArray = (a,k) => {
+//   k = k%a.length;
 //   for(let i=0; i<a.length; i++){
 //     if(k > 0){
-//       a.unshift(a.pop());
+//         let p = a.pop()
+//         a.unshift(p);
 //       k--;
-//     }else{
-//       break;
 //     }
 //   }
 //   return a
 // }
 
-// const rotateArray = (a,k) => {
-//   return a.slice(-k).concat(a.slice(0, -k))
-// }
+const rotateArray = (a,k) => {
+    k = k % a.length;
+  return a.slice(-k).concat(a.slice(0, -k))
+}
 
-// let a = [1,2,3,4,5,6,7];
-// k = 3
-// console.log(rotateArray(a,k));
-
+let a = [1,2,3,4,5];
+k = 9
+console.log(rotateArray(a,k));
 
 // ! 7. Move all Zeros to the end of the array
-// ! Input:
-// ! 1 ,0 ,2 ,3 ,0 ,4 ,0 ,1
-// ! Output:
-// ! 1 ,2 ,3 ,4 ,1 ,0 ,0 ,0
+// ! Input:  [1 ,0 ,2 ,3 ,0 ,4 ,0 ,1]
+// ! Output: [1 ,2 ,3 ,4 ,1 ,0 ,0 ,0]
 
 // let a = [1 ,0 ,2 ,3 ,0 ,4 ,0 ,1]
 // for(let i=a.length-1; i>=0; i--){
@@ -129,22 +143,19 @@
 //     a.splice(i,1)
 //     a.push(0)
 //   }
-// } 
+// }
 // console.log(a);
 
 
 
 
-
-
-
-
-
-// !test
+// ! Flatten Array
+// ! Input  : [1, [2, [3, 4], 5]]
+// ! Output : [ 1, 2, 3, 4, 5 ]
 
 // function flattenArray(arr) {
 //     const result = [];
-  
+
 //     for (let i = 0; i < arr.length; i++) {
 //       if (Array.isArray(arr[i])) {
 //         result.push(...flattenArray(arr[i]))
@@ -154,25 +165,31 @@
 //     }
 //     return result;
 //   }
-  
+
 //   const array = [1, [2, [3, 4], 5]];
 //   console.log(flattenArray(array));
 
 
 
 // ! merge two shorted array without extra space
-
-// let a = [1,4,8,10]
-// let b = [2,3,9]
-
-// for(let i=0; i<a.length; i++){
-//     if(a[i]>b[0]){
-//         a.splice(i, 0, b[0]);
-//         b.shift();
+// try {
+    
+//     const mergeSortedArray = (a,b) =>{
+//         for(let i=0; i<a.length; i++){
+//             if(a[i]>b[0]){
+//                 a.splice(i, 0, b[0]);
+//                 b.shift();
+//             }
+//         }
+//         return a;
 //     }
+//     let a = [1,4,8,10]
+//     let b = [2,3,9]
+//     console.log(mergeSortedArray(a,b))
+// } catch (error) {
+//     console.log('error --------->>>>> ',error);
 // }
 
-// console.log(a)
 
 // ! missing number and repeating number
 // // let a = [3,1,2,5,3]
@@ -209,20 +226,17 @@
 //     }
 // }
 
-
 // const a = ['a', 'b', 'c', 'a', 'b', 'd', 'a', 'b', 'c', 'd', 'd', 'e'];
-
-
 
 // ! Longest sub Array in array
 
 // const findLongestSubArray = (arr) => {
 //     let longestSubArray = [];
-    
+
 //     for (let i = 0; i < arr.length; i++) {
 //         let temp = [];
 //         let tempSubArray = [];
-        
+
 //         for (let j = i; j < arr.length; j++) {
 //             if (!temp.includes(arr[j])) {
 //                 temp.push(arr[j]);
@@ -242,10 +256,7 @@
 // const a = ['a', 'b', 'c', 'a', 'b', 'd', 'a', 'b', 'c', 'd', 'd', 'e'];
 // console.log(findLongestSubArray(a));
 
-
-
-
-// ! Reverse Array 
+// ! Reverse Array
 // ! Input  ----->> [ 1, 2, 3, 4, 5, 6 ]
 // ! Output ----->> [ 6, 5, 4, 3, 2, 1 ]
 
@@ -267,11 +278,7 @@
 
 // console.log(reverseArray(abc));
 
-
-
-
-
-// ! longest unique sub array from an array 
+// ! longest unique sub array from an array
 
 // const findSub = (a) => {
 //   let longestSubArray = [];
@@ -291,7 +298,6 @@
 //   return longestSubArray;
 // };
 
-
 // // ! multiple test cases
 // let a = ["a", "b", "c", "a", "b", "d", "a", "b", "c", "d", "d", "e"];
 // let a1 = ["a", "b", "c", "a", "b", "d", "a", "b", "c", "d", "d", "e"];
@@ -305,7 +311,6 @@
 // let a9 = [];
 // let a10 = ["a"];
 
-
 // console.log(findSub(a));  // [ 'c', 'a', 'b', 'd' ]
 // console.log(findSub(a1)); // [ 'c', 'a', 'b', 'd' ]
 // console.log(findSub(a2)); // ["a"]
@@ -317,8 +322,6 @@
 // console.log(findSub(a8)); // ["1", "2", "3", "4", "5", "6"]
 // console.log(findSub(a9)); // []
 // console.log(findSub(a10)); // ["a"]
-
-
 
 // ! Two consecutive Occurance of 19
 
@@ -332,8 +335,6 @@
 // };
 // const arr = [12, 23, 19, 19, 5, 6, 19];
 // console.log(checkOccuranceOfNineteen(arr));
-
-
 
 // ! four consecutive number
 
@@ -367,8 +368,6 @@
 // console.log(checkArray([1, 2, 3, 3, 1, 2, 3, 3, 1, 2, 3, 3])); // Output: False
 // console.log(checkArray([1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3])); // Output: False
 
-
-
 // ! Validate Parenthesis
 
 // const isValid = (s) => {
@@ -391,8 +390,6 @@
 
 // const passingArray = ["[", "{", "}", "]"];
 // console.log(isValid(passingArray));
-
-
 
 // ! check unique Positive Dominant
 
