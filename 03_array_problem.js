@@ -17,28 +17,47 @@
 
 // ! 2. Find Second Smallest and Second Largest Element in an array without sorting
 
-// const arr = [9,8,5,1,3];
-// let largestNumber = -Infinity;
-// let secondLargestNumber = -Infinity;
-// let smallestNumber = Infinity;
-// let secondSmallestNumber = Infinity;
-// for(let i=0; i<arr.length; i++){
-//     if(arr[i]>largestNumber){
-//         secondLargestNumber = largestNumber
-//         largestNumber = arr[i];
-//     }else if(arr[i]> secondLargestNumber && arr[i] < largestNumber){
-//         secondLargestNumber = arr[i]
+// const findSecondLargest = (arr) => {
+//   if (arr.length < 2) {
+//     return "Length must be minimum 2";
+//   }
+//   let largestNumber = -Infinity;
+//   let secondLargestNumber = -Infinity;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > largestNumber) {
+//       secondLargestNumber = largestNumber;
+//       largestNumber = arr[i];
+//     } else if (arr[i] > secondLargestNumber && arr[i] < largestNumber) {
+//       secondLargestNumber = arr[i];
 //     }
+//   }
+//   return secondLargestNumber === -Infinity ? "No second largest number found" : secondLargestNumber;
+// };
 
-//     if(arr[i]<smallestNumber){
-//         secondSmallestNumber = smallestNumber
-//         smallestNumber = arr[i]
-//     } else if(arr[i] < secondSmallestNumber && arr[i] > smallestNumber){
-//         secondSmallestNumber = arr[i]
+// const findSecondSmallest = (arr) => {
+//   if (arr.length < 2) {
+//     return "Length must be minimum 2";
+//   }
+//   let smallestNumber = Infinity;
+//   let secondSmallestNumber = Infinity;
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] < smallestNumber) {
+//       secondSmallestNumber = smallestNumber;
+//       smallestNumber = arr[i];
+//     } else if (arr[i] < secondSmallestNumber && arr[i] > smallestNumber) {
+//       secondSmallestNumber = arr[i];
 //     }
-// }
-// console.log('secondLargestNumber  ---->', secondLargestNumber);
-// console.log('secondSmallestNumber ---->', secondSmallestNumber);
+//   }
+//   return secondSmallestNumber === Infinity ? "No second Smallest number found" : secondSmallestNumber;
+// };
+
+// // const arr = [9,8,5,1,3];
+// const arr = [90];
+// console.log("Second Largest --->> ", findSecondLargest(arr));
+// console.log("Second Smallest --->> ", findSecondSmallest(arr));
+
+
 
 // ! 3. Check if an Array is Sorted
 
@@ -124,14 +143,14 @@
 //   return a
 // }
 
-const rotateArray = (a,k) => {
-    k = k % a.length;
-  return a.slice(-k).concat(a.slice(0, -k))
-}
+// const rotateArray = (a,k) => {
+//     k = k % a.length;
+//   return a.slice(-k).concat(a.slice(0, -k))
+// }
 
-let a = [1,2,3,4,5];
-k = 9
-console.log(rotateArray(a,k));
+// let a = [1,2,3,4,5];
+// k = 9
+// console.log(rotateArray(a,k));
 
 // ! 7. Move all Zeros to the end of the array
 // ! Input:  [1 ,0 ,2 ,3 ,0 ,4 ,0 ,1]
@@ -145,6 +164,129 @@ console.log(rotateArray(a,k));
 //   }
 // }
 // console.log(a);
+
+
+// ! 10. Find the missing number in an array
+// ! Input :  a = [1,2,4,5]  n = 5
+// ! Output : 3
+
+// const findMissingNumber = (arr,n) => {
+//   const expectedSum = (n*(n+1))/2;
+//   let actualSum = 0;
+//   for(let i=0; i<arr.length; i++){
+//     actualSum += arr[i];
+//   }
+//   return expectedSum-actualSum;  
+// }
+// const arr = [1,3,4];
+// let n = 4;
+// console.log(findMissingNumber(arr, n));
+
+
+
+
+// ! 11. Count Maximum Consecutive One's in the array
+// ! Input : [1, 1, 0, 1, 1, 1]
+// ! Output : 3
+// const findMaxConsecutiveOnes = (arr) => {
+//   let currentStreak = 0;
+//   let maxCunsecutive = 0;
+//   for(let i=0; i<arr.length; i++){
+//     if(arr[i] === 1){
+//       currentStreak++ ;
+//       if(currentStreak > maxCunsecutive){
+//         maxCunsecutive = currentStreak
+//       }
+//     }else{
+//       currentStreak = 0;
+//     }
+//   }
+//   return maxCunsecutive;
+// }
+// const arr = [1, 1, 0, 1, 1, 1];
+// console.log(findMaxConsecutiveOnes(arr));
+
+
+
+
+
+// ! 9. Union of two sorted array 
+
+// const findUnion = (a,b) => {
+//     let unique = new Set();
+//     for (let i = 0; i < a.length; i++) {
+//         unique.add(a[i]);
+//     }
+//     for (let i = 0; i < b.length; i++) {
+//         unique.add(b[i]);
+//     }
+//     const UnSortedArray =  Array.from(unique);
+//     for (let i = 0; i < UnSortedArray.length-1; i++) {
+//         for (let j = 0; j < UnSortedArray.length-i-1; j++) {
+//             if(UnSortedArray[j] > UnSortedArray[j+1]){
+//                 let temp = UnSortedArray[j];
+//                 UnSortedArray[j] = UnSortedArray[j+1];
+//                 UnSortedArray[j+1] = temp
+//             }
+//         }
+//     }
+//     return UnSortedArray;
+// }
+// let arr1 = [1, 2, 3, 4, 5];
+// let arr2 = [2, 3, 4, 4, 5];
+// console.log(findUnion(arr1,arr2));
+
+
+// ! sort array 
+// const sortArray = (a) => {
+//     for (let i = 0; i < a.length-1; i++) {
+//         for (let j = 0; j < a.length-i-1; j++) {
+//             if(a[j] > a[j+1]){
+//                 let temp = a[j];
+//                 a[j] = a[j+1];
+//                 a[j+1] = temp
+//             }
+//         }
+//     }
+//     return a;
+// }
+  
+// let arr = [2, 5, 1, 4, 3];
+// console.log(sortArray(arr));
+  
+
+
+
+// ! seeeeeeeeeeeeeeeeeeeeee
+// function rotateArray(arr, k) {
+//   if (!Array.isArray(arr)) {
+//     return "Input must be an array";
+//   }
+//   if (typeof k !== 'number' || k < 0) {
+//     return "The rotation count must be a non-negative number";
+//   }
+  
+//   let n = arr.length;
+//   if (n === 0) return arr;
+
+//   k = k % n;
+//   if (k === 0) return arr;
+
+//   let result = new Array(n);
+
+//   for (let i = 0; i < n; i++) {
+//     result[(i + k) % n] = arr[i];
+//   }
+
+//   return result;
+// }
+
+// // Example usage
+// try {
+//   console.log(rotateArray('s', 2)); // Output: [5, 6, 1, 2, 3, 4]
+// } catch (error) {
+//   console.error(error.message);
+// }
 
 
 
@@ -169,11 +311,9 @@ console.log(rotateArray(a,k));
 //   const array = [1, [2, [3, 4], 5]];
 //   console.log(flattenArray(array));
 
-
-
 // ! merge two shorted array without extra space
 // try {
-    
+
 //     const mergeSortedArray = (a,b) =>{
 //         for(let i=0; i<a.length; i++){
 //             if(a[i]>b[0]){
@@ -189,7 +329,6 @@ console.log(rotateArray(a,k));
 // } catch (error) {
 //     console.log('error --------->>>>> ',error);
 // }
-
 
 // ! missing number and repeating number
 // // let a = [3,1,2,5,3]
