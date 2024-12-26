@@ -238,21 +238,21 @@
 
 
 // ! sort array 
-// const sortArray = (a) => {
-//     for (let i = 0; i < a.length-1; i++) {
-//         for (let j = 0; j < a.length-i-1; j++) {
-//             if(a[j] > a[j+1]){
-//                 let temp = a[j];
-//                 a[j] = a[j+1];
-//                 a[j+1] = temp
-//             }
-//         }
-//     }
-//     return a;
-// }
+const sortArray = (a) => {
+    for (let i = 0; i < a.length-1; i++) {
+        for (let j = 0; j < a.length-i-1; j++) {
+            if(a[j] ===0  && a[j+1] !== 0){
+                let temp = a[j];
+                a[j] = a[j+1];
+                a[j+1] = temp
+            }
+        }
+    }
+    return a;
+}
   
-// let arr = [2, 5, 1, 4, 3];
-// console.log(sortArray(arr));
+let arr = [1,2,0,0,4,0,5];
+console.log(sortArray(arr));
   
 
 
@@ -367,33 +367,6 @@
 
 // const a = ['a', 'b', 'c', 'a', 'b', 'd', 'a', 'b', 'c', 'd', 'd', 'e'];
 
-// ! Longest sub Array in array
-
-// const findLongestSubArray = (arr) => {
-//     let longestSubArray = [];
-
-//     for (let i = 0; i < arr.length; i++) {
-//         let temp = [];
-//         let tempSubArray = [];
-
-//         for (let j = i; j < arr.length; j++) {
-//             if (!temp.includes(arr[j])) {
-//                 temp.push(arr[j]);
-//                 tempSubArray.push(arr[j]);
-//             } else {
-//                 break;
-//             }
-//         }
-
-//         if (tempSubArray.length > longestSubArray.length) {
-//             longestSubArray = tempSubArray;
-//         }
-//     }
-//     return longestSubArray;
-// };
-
-// const a = ['a', 'b', 'c', 'a', 'b', 'd', 'a', 'b', 'c', 'd', 'd', 'e'];
-// console.log(findLongestSubArray(a));
 
 // ! Reverse Array
 // ! Input  ----->> [ 1, 2, 3, 4, 5, 6 ]
@@ -554,3 +527,6 @@
 // console.log(isPositiveDominant([5, 0]));  //  true
 // console.log(isPositiveDominant([0, -4, -1]));  //  false
 // console.log(isPositiveDominant([0, -1])); //  false
+
+
+// ---demo changes
